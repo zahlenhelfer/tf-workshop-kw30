@@ -3,12 +3,6 @@ variable "region" {
   description = "AWS Region to use"
 }
 
-variable "admin_password" {
-  type        = string
-  description = "(optional) describe your variable"
-  sensitive   = true
-}
-
 variable "database_needed" {
   type        = bool
   default     = false
