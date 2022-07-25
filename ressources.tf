@@ -2,7 +2,7 @@ resource "aws_instance" "app_server" {
   count         = var.node_count
   ami           = var.ami_id[var.region]
   instance_type = var.instance_type
-  user_data     = file(bootstrap-webserver.sh)
+  user_data     = file("bootstrap-webserver.sh")
 
   tags = {
     Name = "MRO-AppServer ${count.index + 1}"
