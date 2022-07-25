@@ -3,6 +3,12 @@ variable "region" {
   description = "AWS Region to use"
 }
 
+variable "database_needed" {
+  type        = bool
+  default     = false
+  description = "(optional) describe your variable"
+}
+
 variable "instance_type" {
   type        = string
   default     = "t3.micro"
