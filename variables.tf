@@ -1,3 +1,8 @@
+variable "region" {
+  default     = "eu-central-1"
+  description = "AWS Region to use"
+}
+
 variable "instance_type" {
   type        = string
   default     = "t3.micro"
@@ -18,5 +23,13 @@ variable "image_id" {
     # regex(...) fails if it cannot find a match
     condition     = can(regex("^ami-", var.image_id))
     error_message = "Image-id value must be a valid ami id, does it start with 'ami-'?"
+  }
+}
+
+variable "ami_id" {
+  type = map(string)
+  default = {
+    eu-central-1 = "ami-0a1ee2fb28fe05df3"
+    us-west-2    = "ami-098e42ae54c764c35"
   }
 }
