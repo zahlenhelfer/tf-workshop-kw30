@@ -1,6 +1,6 @@
 resource "aws_instance" "app_server" {
   count           = var.node_count
-  ami             = var.ami_id[var.region]
+  ami             = data.aws_ami.amazon-linux-2.id #var.ami_id[var.region]
   instance_type   = var.instance_type
   user_data       = file("bootstrap-webserver.sh")
   security_groups = [aws_security_group.web_access.name]
