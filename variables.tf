@@ -5,7 +5,7 @@ variable "region" {
 
 variable "database_needed" {
   type        = bool
-  default     = false
+  default     = true
   description = "(optional) describe your variable"
 }
 
@@ -53,5 +53,15 @@ variable "sg_web_config" {
       protocol    = "tcp",
       cidr_blocks = ["10.0.0.0/16"],
     }
+  }
+}
+
+variable "common_tags" {
+  type = map(string)
+  default = {
+    Department  = "Global Infrastructure Services"
+    Team        = "EMEA Delivery"
+    CostCenter  = "666"
+    Application = "Terraform Demo App"
   }
 }

@@ -5,9 +5,9 @@ resource "aws_instance" "app_server" {
   user_data       = file("bootstrap-webserver.sh")
   security_groups = [aws_security_group.web_access.name]
 
-  tags = {
-    Name = "MRO-AppServer ${count.index + 1}"
-  }
+  tags = merge(var.common_tags, {
+    Name = "MRO-AppSrv-${count.index + 1}"
+  })
 }
 
 resource "aws_security_group" "web_access" {
