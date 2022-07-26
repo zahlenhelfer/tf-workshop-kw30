@@ -7,7 +7,7 @@ resource "aws_vpc" "main" {
 
 }
 
-resource "aws_subnet" "subnet-1a" {
+resource "aws_subnet" "subnet" {
   count                   = length(data.aws_availability_zones.available.names)
   vpc_id                  = aws_vpc.main.id
   cidr_block              = "10.0.${count.index + 1}.0/24"
