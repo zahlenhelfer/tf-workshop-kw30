@@ -23,13 +23,13 @@ resource "aws_security_group" "web_access" {
   }
 
   dynamic "ingress" {
-    for_each = var.ports
+    for_each = var.sg_web_config
     content {
       description = "description ${ingress.key}"
-      from_port   = ingress.value
-      to_port     = ingress.value
-      protocol    = "tcp"
-      cidr_blocks = ["0.0.0.0/0"]
+      from_port   = ingress.value.port
+      to_port     = ingress.value.port
+      protocol    = ingress.value.protocol
+      cidr_blocks = ingress.value.cidr_blocks
     }
 
   }

@@ -40,6 +40,18 @@ variable "ami_id" {
   }
 }
 
-variable "ports" {
-  default = [80, 443, 22, 3306]
+variable "sg_web_config" {
+  type = map(any)
+  default = {
+    "web access" = {
+      port        = 80,
+      protocol    = "tcp",
+      cidr_blocks = ["0.0.0.0/0"],
+    }
+    "ssh access" = {
+      port        = 22,
+      protocol    = "tcp",
+      cidr_blocks = ["10.0.0.0/16"],
+    }
+  }
 }
