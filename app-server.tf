@@ -8,6 +8,11 @@ resource "aws_instance" "app_server" {
   tags = merge(var.common_tags, {
     Name = "MRO-AppSrv-${count.index + 1}"
   })
+
+  depends_on = [
+    aws_instance.db_server
+  ]
+
 }
 
 resource "aws_security_group" "web_access" {
