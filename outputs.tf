@@ -5,3 +5,7 @@ output "app_server_ip_addresses" {
 output "ami-id" {
   value = data.aws_ami.amazon-linux-2
 }
+
+output "az" {
+  value = data.aws_availability_zones.available
+}
