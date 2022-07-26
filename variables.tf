@@ -39,3 +39,7 @@ variable "ami_id" {
     us-west-2    = "ami-098e42ae54c764c35"
   }
 }
+
+variable "ports" {
+  default = [80, 443, 22, 3306]
+}
