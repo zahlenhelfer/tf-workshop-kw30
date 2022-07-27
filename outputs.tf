@@ -6,6 +6,6 @@ output "ami-id" {
   value = data.aws_ami.amazon-linux-2
 }
 
-output "website-bucket-url" {
-  value = module.website_s3_bucket.domain
-}
+# output "website-bucket-url" {
+#   value = module.website_s3_bucket.domain
+# }

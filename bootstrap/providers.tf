@@ -1,9 +1,8 @@
 provider "aws" {
-  region = var.region
+  region = "eu-central-1"
 
   default_tags {
     tags = {
-      Workspace   = terraform.workspace
       Environment = "Dev"
       Owner       = "Deployed by Terraform"
     }
