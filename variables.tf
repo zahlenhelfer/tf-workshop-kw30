@@ -3,6 +3,10 @@ variable "region" {
   description = "AWS Region to use"
 }
 
+variable "s3_databucket_name" {
+  default = "mro-zh-42"
+}
+
 variable "database_needed" {
   type        = bool
   default     = true
