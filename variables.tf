@@ -7,6 +7,10 @@ variable "s3_databucket_name" {
   default = "mro-zh-42"
 }
 
+variable "static_bucket_name" {
+  default = "mro-website-42"
+}
+
 variable "database_needed" {
   type        = bool
   default     = true
