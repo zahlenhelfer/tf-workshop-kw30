@@ -5,3 +5,7 @@ output "app_server_ip_addresses" {
 output "ami-id" {
   value = data.aws_ami.amazon-linux-2
 }
+
+output "website-bucket-url" {
+  value = module.website_s3_bucket.domain
+}
